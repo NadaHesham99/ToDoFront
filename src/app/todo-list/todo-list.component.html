@@ -1,0 +1,79 @@
+<div class="AllTodos">
+  <div class="overlay">
+    <nav class="d-flex justify-content-between align-items-center">
+      <div class="brand">
+        <p><img src="../../assets/Images/brandd.png" width="150px" height="40px"></p>
+      </div>
+      <div class="create">
+        <button class="btn btn-danger button-top" routerLink="../Groupform">
+          Create New Group</button>
+        <button class="btn btn-danger button-top" routerLink="../ToDoform/">
+            Add ToDo</button>
+      </div>
+      <div class="filter">
+        <select class=" filter-select" (change)="filter($event)">
+          <option  disabled selected>Select Status 'filter Group'</option>
+          <option value="0">Done</option>
+          <option value="1">Pending</option>
+        </select>
+      </div>
+
+
+      <div class="logout">
+        <button class="btn btn-danger" (click)="logoutUser()"><i class="fa fa-sign-out" aria-hidden="true"></i>
+          Logout</button>
+      </div>
+    </nav>
+
+    <div class="row d-flex  justify-content-between container ">
+      <div class="col-md-6 group" *ngFor="let group of groups">
+        <!-- [value]="groups" -->
+        <div class="card-hover-shadow-2x mb-3 card">
+          <div class="card-header-tab card-header">
+            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+              <i class="fa fa-tasks"></i>&nbsp;{{group.title}}
+            </div>
+
+          </div>
+          <div class="scroll-area-sm">
+            <div style="position: static;" class="ps ps--active-y">
+              <div class="ps-content">
+                <ul class=" list-group list-group-flush" *ngFor="let list of todos">
+                  <li class="list-group-item" *ngIf="list.groupName._id===group._id">
+                    <div class="widget-content p-0">
+                      <div class="widget-content-wrapper">
+
+                        <div class="widget-content-left">
+                          <div class="widget-heading">{{list.title}}<div class="badge badge-danger ml-2">
+                              {{list.status}}</div>
+                          </div>
+                        </div>
+                        <div class="widget-content-right">
+                          <button class="border-0 btn-transition btn btn-outline-primary" (click)="updateToDo(list._id)">
+                             <i class="fa fa-pencil"></i>
+                          </button>
+                          <button class="border-0 btn-transition btn btn-outline-danger" (click)="deleteToDo(list._id)">
+                            <i class="fa fa-trash"></i>
+                          </button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="d-block text-right card-footer">
+            <button class="btn btn-primary widget-content-right eidt-group" (click)="updateGroup(group._id)">
+              <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+            </button>
+            <button class="btn btn-danger widget-content-right delete-group" (click)="deleteGroup(group._id)">
+              <i class="fa fa-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

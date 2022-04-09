@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  color: #999;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+.error {
+  color: red;
+}
+.form-holder {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.form-holder i {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.form-control:focus {
+  border-bottom: 1px solid #accffe;
+}
+
+
+.groupContainer{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  background-color: #ddd;
+  justify-content: space-around;
+  padding:30px 100px ;
+  margin: auto;
+  margin-top: 100px;
+  border-radius:15px ;
+}
+.addGroup{
+  width: 50%;
+  // margin: auto;
+  // margin-top: 100px;
+  box-shadow: 0px 0px 50px 10px rgba($color: #000000, $alpha: 0.20);
+  padding:  50px ;
+  text-align: left;
+  background-color: #fff;
+}
+.addGroup h3{
+  margin-bottom: 30px;
+  color: #444;
+}
+.addGroup input{
+  width: 100%;
+}
+.addGroup button{
+  margin-right: 15px;
+}
+.imageGroup{
+  max-width: 40%;
+}
+.allRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  max-height: 100%;
+  margin-top: 50px;
+}
+.allRegister .image {
+  max-width: 40%;
+  margin-right: 80px;
+}
+.allRegister .wrapper{width: 33%;text-align: center;}
+.allRegister form {
+  position: relative;
+  z-index: 9;
+  padding: 50px ;
+  background: #fff;
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.2);
+}
+.allRegister h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #333;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 33px;
+  font-weight: bold;
+}
+
+.allRegister .form-holder {
+  margin-bottom: 21px;
+}
+.allRegister .form-holder .input-container{
+  position: relative;
+}
+
+.allRegister .form-holder i {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.allRegister .form-control {
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+  display: block;
+  height: 38px;
+  background: none;
+  padding: 3px 42px 0px;
+  color: #666;
+  font-size: 16px;
+}
+.allRegister button {
+  border: none;
+  width: 100%;
+  height: 49px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+.edit{
+  margin-bottom: 30px;
+}
+.allRegister button:hover {
+  background-color: #ac1d2b;
+}
+.goto{color:blue ;cursor:pointer}
+@media (max-width: 767px) {
+  .allRegister form {
+    padding: 35px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+  }
+}

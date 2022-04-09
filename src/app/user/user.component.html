@@ -1,0 +1,47 @@
+<div class="allRegister">
+  <div class="image"><img src="../../assets/Images/image.png"></div>
+  <div class="wrapper">
+    <div class="inner">
+      <form action=""  [formGroup]="form">
+        <h3>New Account</h3>
+        <div class="form-holder">
+          <div class="input-container">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text"  class="form-control" placeholder="Username" formControlName="name">
+          </div>
+          <small *ngIf="this.form.controls['name'].invalid && isSubmitted" class="error">Name is
+            Required</small>
+        </div>
+        <div class="form-holder">
+          <div class="input-container">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <input type="text" class="form-control" placeholder="Mail" formControlName="email">
+          </div>
+          <small *ngIf="this.form.controls['email'].invalid && isSubmitted" class="error">Email format is
+            incorrect</small>
+        </div>
+
+        <div class="form-holder">
+          <div class="input-container">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          </div>
+          <small *ngIf="this.form.controls['password'].invalid && isSubmitted" class="error">Password is
+            Required</small>
+        </div>
+        <div class="form-holder">
+          <div class="input-container">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            <input type="password" class="form-control" placeholder="Password" formControlName="confirm">
+          </div>
+          <small class="error">{{passError}}</small>
+
+        </div>
+        <button (click)="onSubmit()">
+          <span>Register</span>
+        </button>
+        <a class="goto" style="color: blue;"(click)="gotoLogin()">I have already account</a>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="groupContainer">
+
+  <div class="addGroup">
+    <form action="" [formGroup]="form">
+      <ng-container *ngIf="editMode==true; else elseTemplate2">
+        <h3>Edit ToDo</h3>
+      </ng-container>
+      <ng-template #elseTemplate2>
+        <h3>New ToDo</h3>
+      </ng-template>
+
+      <div class="form-holder">
+        <input type="text" formControlName="title" class="form-control" id="title" placeholder="ToDo title">
+        <small *ngIf="this.form.controls['title'].invalid && isSubmitted" class="error">Title is Required</small>
+      </div>
+
+
+      <ng-container *ngIf="editMode==false">
+      <div class="form-holder">
+        <select (change)="changed($event)">
+          <option  disabled selected>Select Group</option>
+            <option *ngFor="let item of group" value={{item._id}}>{{item.title}}</option>
+        </select>
+      </div>
+    </ng-container>
+
+
+      <ng-container *ngIf="editMode==true else elseTemplate">
+        <button class="btn btn-primary" (click)="onSubmit()">
+          <span><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
+        </button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button class="btn btn-success" (click)="onSubmit()">
+          <span><i class="fa fa-plus" aria-hidden="true"></i> Create</span>
+        </button>
+      </ng-template>
+
+      <button class="btn btn-danger" (click)="goBack()">
+        <span><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancel</span>
+      </button>
+    </form>
+  </div>
+  <div class="imageGroup">
+    <img src="../../../assets/Images/group.png">
+  </div>
+</div>
