@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://todo/api/v1/'
+  apiUrl: 'https://todoappmeanstack.herokuapp.com/'
 };
